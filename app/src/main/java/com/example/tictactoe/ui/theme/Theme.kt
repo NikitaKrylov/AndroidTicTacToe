@@ -44,6 +44,8 @@ fun TicTacToeTheme(
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
+    val colors = OnDarkTicTactToePalette
+
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
@@ -62,9 +64,11 @@ fun TicTacToeTheme(
         }
     }
 
+
+
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
-        content = content
+        content = content,
     )
 }
